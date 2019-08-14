@@ -169,3 +169,39 @@ testIt();
 
 //Assignemtn 4
 //Validate object keys
+const objectA = {
+  id: 2,
+  name: 'Jane Doe',
+  age: 34,
+  city: 'Chicago',
+};
+
+const objectB = {
+  id: 3,
+  age: 33,
+  city: 'Peoria',
+};
+
+const objectC = {
+  height:6,
+  weight:200,
+  stamina:20,
+};
+
+const expectedKeys = ['id', 'name', 'age', 'city'];
+
+function validateKeys(thing, expectedKeys) {
+  let isMatch = null;
+  let keysPulled = Object.keys(thing);
+  for (let i=0; i < expectedKeys.length; i++){
+      if (keysPulled[i] != expectedKeys[i]){
+        isMatch = false;
+      }
+      else
+        isMatch = true;
+  }
+  return (isMatch);
+}
+
+validateKeys(objectA, expectedKeys);
+console.log(validateKeys(objectA, expectedKeys));
